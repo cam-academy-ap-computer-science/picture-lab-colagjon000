@@ -184,6 +184,37 @@ public class Picture extends SimplePicture
     } 
   }
   
+  //negate
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(255 - pixelObj.getBlue());
+        pixelObj.setRed(255 - pixelObj.getRed());
+        pixelObj.setGreen(255 - pixelObj.getGreen());
+      }
+    }
+  }
+  
+  //gray
+  public void grayScale()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+    	int curLev = (pixelObj.getBlue() + pixelObj.getGreen() + pixelObj.getRed()) / 3;
+        pixelObj.setBlue(curLev);
+        pixelObj.setRed(curLev);
+        pixelObj.setGreen(curLev);
+      }
+    }
+  }
+  
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
