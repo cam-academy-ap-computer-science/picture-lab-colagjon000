@@ -53,22 +53,17 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
-    temple.explore();
+    Picture temple = new Picture("images//temple.jpg");
     temple.mirrorTemple();
     temple.explore();
   }
-  public static void testNegate() {
-	  Picture beach = new Picture("images//beach.jpg");
-	  beach.negate();
-	  beach.explore();
-  }
   
-  //grayscale
-  public static void testGrayscale() {
-	  Picture beach = new Picture("images//beach.jpg");
-	  beach.grayScale();
-	  beach.explore();
+  /** Method to test mirrorArms */
+  public static void testMirrorArms()
+  {
+    Picture temple = new Picture("images//snowman.jpg");
+    temple.mirrorTemple();
+    temple.explore();
   }
   
   /** Method to test the collage method */
@@ -101,13 +96,13 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    testGrayscale();
+    //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalRightToLeft();
 	//testMirrorHorizontal();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
