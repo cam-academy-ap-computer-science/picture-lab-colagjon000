@@ -65,6 +65,12 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
+  //mirrors a seagull
+  public static void testMirrorGull() {
+	  Picture gull = new Picture("images//seagull.jpg");
+	  gull.mirrorGull();
+	  gull.explore();
+  }
   
   /** Method to test the collage method */
   public static void testCollage()
@@ -108,9 +114,9 @@ public class PictureTester
 	//testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
