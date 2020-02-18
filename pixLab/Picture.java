@@ -100,6 +100,18 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void zeroRed()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+      }
+    }
+  }
+  
   //keep only blue
   public void keepOnlyBlue()
   {
@@ -238,18 +250,48 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+  
+  public void copy2 (Picture fromPic, int startRow, int startCol, int endRow, int endCol) {
+	  Pixel fromPixel = null;
+	  Pixel toPixel = null;
+	  Pixel[][] toPixels = this.getPixels2D();
+	  Pixel[][] fromPixels = fromPic.getPixels2D();
+	  for (int fromRow = startRow, toRow = startRow; 
+			  fromRow < fromPixels.length &&
+			  toRow < toPixels.length; 
+			  fromRow++, toRow++)
+	  		{
+		  		for (int fromCol = endCol, toCol = startCol; 
+		  				fromCol < fromPixels[0].length &&
+		  				toCol < toPixels[0].length;  
+		  				fromCol++, toCol++)
+		  		{
+			  fromPixel = fromPixels[fromRow][fromCol];
+			  toPixel = toPixels[toRow][toCol];
+			  toPixel.setColor(fromPixel.getColor());
+		  }
+	  }   
+  }
 
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("images//flower1.jpg");
+    Picture flower2 = new Picture("images//flower2.jpg");
+    Picture flower3 = new Picture("images//flower2.jpg");
+    Picture flowerNoRed = new Picture(flower3);
+    flowerNoRed.zeroRed();
+    
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    
+    this.copy(flowerNoRed,200,0);
+    
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
     this.copy(flowerNoBlue,300,0);
+    
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
     this.mirrorVertical();
