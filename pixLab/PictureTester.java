@@ -69,7 +69,7 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("images//640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -83,6 +83,11 @@ public class PictureTester
   }
   //negate
   
+  //copy
+  public static void testCopy()	 {
+	  Picture canvas = new Picture("images//640x480.jpg");
+	  
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -102,10 +107,10 @@ public class PictureTester
 	//testMirrorVerticalRightToLeft();
 	//testMirrorHorizontal();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
