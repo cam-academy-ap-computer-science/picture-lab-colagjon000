@@ -34,6 +34,14 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  //negate
+  public static void testNegate()
+  {
+    Picture caterpillar = new Picture("images//caterpillar.jpg");
+    caterpillar.negate();
+    caterpillar.explore();
+  }
+  
   //horizontal
   public static void testMirrorHorizontal()
   {
@@ -83,11 +91,25 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("images//swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
-  //negate
+  //testGrayScale
+  public static void testGrayscale()
+  {
+    Picture swan = new Picture("images//swan.jpg");
+    swan.grayscale();
+    swan.explore();
+  }
+  
+  //fixUnderWater
+  public static void testFixUnderwater()
+  {
+    Picture water = new Picture("images//water.jpg");
+    water.fixUnderWater();
+    water.explore();
+  }
   
   //copy
   public static void testCopy()	 {
@@ -114,12 +136,10 @@ public class PictureTester
 	//testMirrorHorizontal();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
-    //testMirrorDiagonal();
+    //testMirrorGull();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
